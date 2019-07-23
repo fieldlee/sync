@@ -16,7 +16,6 @@ class UpCertFile(Resource):
             if os.path.exists(certfilePath):
                 os.remove(certfilePath)
             file.save(certfilePath)
-
             if untils.UNzip(CertPath,filename):
                 return jsonify({'success': True})
             else:
