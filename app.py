@@ -7,12 +7,6 @@ baasApp = Flask(__name__)
 baasApp.config['MAX_CONTENT_LENGTH'] = 60 * 1024 * 1024
 baasApp.config['UPLOAD_PATH'] = CertPath
 api = Api(baasApp)
-jsonrpc = JSONRPC(baasApp,'/api',enable_web_browsable_api=False)
-
-@jsonrpc.method('App.Index')
-def index():
-
-    return
 
 
 api.add_resource(certfile.UpCertFile,'/upcert')
